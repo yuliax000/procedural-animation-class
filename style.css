@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --col01: rgb(0, 0, 0);
+  --col02: rgb(70, 70, 70);
+  --col03: rgb(183, 183, 183);
+  --col04: rgb(255, 255, 255);
+  --border: solid 20px var(--col02);
+}
+
+main,
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#circleOne {
+  position: absolute;
+  width: 5vh;
+  height: 5vh;
+  left: 47.5%;
+  top: 47.5%;
+  border-radius: 5vh;
+  background-color: rgb(42, 165, 159);
+  /* here we're adding a standard CSS animation but we're setting the play state to paused*/
+  animation: circleShake 1s ease-in-out infinite;
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state */
+  animation-play-state: paused;
+}
+
+@keyframes circleShake {
+  0% {
+    transform: translateX(1vh);
+  }
+  20% {
+    transform: translateX(-1vh);
+  }
+  40% {
+    transform: translateX(0.4vh);
+  }
+  60% {
+    transform: translateX(0vh);
+  }
+  80% {
+    transform: translateX(-0.4vh);
+  }
+  100% {
+    transform: translateX(1vh);
+  }
+}
